@@ -1,10 +1,22 @@
 body {
     
-    font-family: "Trebuchet MS";
+    font-family: "Trebuchet MS", sans-serif;
     background-color: #FFCC99;
     color:#333;
 }
 
 h1 {
     color: #009999;
+}
+
+fieldset {
+    width: 50%;
+    float:right;
+}
+
+#j-form {
+
+    margin:0 auto;
+    width:800px;
+
 }
