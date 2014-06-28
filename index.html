@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+
+
+</head>
+<body>
+<div>
+    <h1 id="mainTitle">This is the main title element</h1>
+
+    <img src="images/indifference.png" id="mainImage" height="150px" width="180px" />
+    <form id="frmSupport" method="post" action="support_process.php">
+        <fieldset id="fastSupport">
+            <legend><strong>Fast Support</strong></legend>
+            <p>If you've already booked Ed Drain, the Singing Rails Girls  coach, <br> and have not gotten a confirmation number, <br>drop us a line and we'll respond within 24 hours.</p>
+        </fieldset>
+            <label for="email">Email:</label>
+            <input type="text" placeholder="your email" id="email" name="email" tabindex="10" />
+            <span id="errorMsg"></span>
+
+            <h2>Ed's "Blah Blah Blah" Tour Status</h2>
+            <label for="tourStatus" class="inline">Ed already toured here</label>
+                <input type="radio" value="booked" name="tourStatus" id="tourStatus" tabindex="40" />
+            <label for="tourConf" class="inline" >Ed confirmed his tour date</label>
+                <input type="radio" value="paid" name="tourConf" id="tourConf" tabindex="50" />
+
+            <br>
+        <input type="submit" value="Submit">
+
+    </form>
+</div>
+
+
+<script src="myscript.js"></script>
+
+</body>
+</html>
