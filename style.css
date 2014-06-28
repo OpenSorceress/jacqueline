@@ -20,3 +20,9 @@ fieldset {
     width:800px;
 
 }
+
+#errorMsg {
+
+    color:red;
+
+}
