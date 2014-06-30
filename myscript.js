@@ -62,7 +62,7 @@ window.onload = function() {
 
 // This tokenizes the image element that has the id "mainImage"
 var myImage = document.getElementById("mainImage");
-var imageArray = ["images/lol.jpg", "images/indifference.png"];
+var imageArray = ["images/lol.jpg", "images/indifference.png", "images/murdock.jpg", "images/stairs_and_drawers.png", "images/internet-voodoo.jpg"];
 var imageIndex = 0;
 
 // This iterates through the images in the array defined above ;)
