@@ -35,3 +35,12 @@ fieldset {
     float:right;
 
 }
+
+#container {
+    width: 400px;
+    margin: auto;
+}
+
+h3 {
+    color: #955B78;
+}

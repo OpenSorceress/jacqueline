@@ -1,6 +1,12 @@
-// Simple AJAX example
+/* This shows a simple AJAX example, a prototype example,
+ and shows you how to code the logic using just JavaScript 
+ to create an input textbox, a submit button and 
+ output a timer's countdown.
+ */
 
-// 1. Create the request
+
+// The AJAX example
+//1. Create the request
 var myRequest;
 
 // Feature check!
@@ -27,7 +33,7 @@ myRequest.onreadystatechange = function() {
     }
 };
 
-// Open and send it
+// 3. Open and send it
 myRequest.open('GET', 'simple.txt', true);
 // Any parameters? If not, then 'null'
 myRequest.send(null);
@@ -55,5 +61,77 @@ var jac = new Player("Jac", 50, 42);
 jac.logInfo();
 jac.promote();
 
-// JavaScript does not have any output/print functions
-// so we can only use it to manipulate HTML elements
+/* JavaScript does not have a print function
+ so we can only use it to create and 
+ manipulate HTML elements,
+ like we will for this countdown timer in
+ which I also illustrate the use 
+ of global variables. Enjoy :)
+*/
+
+// Two global variables defined
+var secondsRemaining;
+var intervalHandle;
+
+function resetPage() {
+	document.getElementById("inputArea").style.display = "block";
+}
+
+function tick() {
+	// Grab the h3 element (the countdown display)
+	var timeDisplay = document.getElementById("time");
+	// Convert seconds into mm:ss
+	var min = Math.floor(secondsRemaining/60);
+	var sec = secondsRemaining - (min * 60);
+	// Add a leading zero as a string 
+	//value if seconds is less than 10
+	if (sec < 10) {
+		sec = "0" + sec;
+	}
+	// Concatenate with a colon
+	var message = min.toString() + ":" + sec;
+	// Next, change the display
+	timeDisplay.innerHTML = message;
+	// Stop timer if down to zero
+	if (secondsRemaining === 0) {
+		alert("Done!");
+		clearInterval(intervalHandle);
+		resetPage();
+	}
+	// Subtract from seconds remaining
+	secondsRemaining--;
+}
+function startTimer() {
+	// Get contents of the "minutes" textbox
+	var minutes = document.getElementById("minutes").value;
+	// Sanity check if not a number
+	if (isNaN(minutes)) {
+		alert("Please enter a number!");
+		return;
+	}
+	// How many seconds?
+	secondsRemaining = minutes * 60;
+	// Every sec, call the "tick" function
+	intervalHandle = setInterval(tick, 1000);
+	// Hide the form
+	document.getElementById("inputArea").style.display = "none";
+}
+
+// As soon as page is loaded...
+window.onload = function() {
+	// create input textbox and give it an id of "minutes"
+	// and define variables	
+	var inputMinutes = document.createElement("input");
+	inputMinutes.setAttribute("id", "minutes");
+	inputMinutes.setAttribute("type", "text");
+	// Create a submit or input button
+	var startButton = document.createElement("input");
+	startButton.setAttribute("type", "button");
+	startButton.setAttribute("value", "Start Timer");
+	startButton.onclick = function() {
+		startTimer();
+	};
+	// Add to the DOM, to the div called "inputArea"
+	document.getElementById("inputArea").appendChild(inputMinutes);
+	document.getElementById("inputArea").appendChild(startButton);
+};
