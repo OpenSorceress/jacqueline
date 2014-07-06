@@ -6,7 +6,7 @@ var myRequest;
 // Feature check!
 if (window.XMLHttpRequest) { //does it exist? We're in Firefox, Safari, etc.
     myRequest = new XMLHttpRequest();
-} else if (window.ActiveXObject) {// if not, we're in IE
+} else if (window.ActiveXObject) { // if not, we're in IE
     myRequest = new ActiveXObject("Microsoft.XMLHttp");
 }
 
@@ -31,3 +31,29 @@ myRequest.onreadystatechange = function() {
 myRequest.open('GET', 'simple.txt', true);
 // Any parameters? If not, then 'null'
 myRequest.send(null);
+
+// Simple prototype example and constructor function
+function Player(n, s, r) {
+	this.name = n;
+	this.score = s;
+	this.rank = r;
+}
+
+Player.prototype.logInfo = function() {
+	console.log("I am:", this.name);
+}
+// Let's try another one and give it a 'promote' method 
+Player.prototype.promote = function(){
+	this.rank++;
+	console.log("My new rank is:", this.rank);
+}
+var ed = new Player("Ed", 1000, 5);
+ed.logInfo();
+ed.promote();
+
+var jac = new Player("Jac", 50, 42);
+jac.logInfo();
+jac.promote();
+
+// JavaScript does not have any output/print functions
+// so we can only use it to manipulate HTML elements
