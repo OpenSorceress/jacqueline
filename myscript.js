@@ -51,6 +51,27 @@ function prepareEventHandlers() {
                 return this.submit();
             }
         };
+    //This resizes the browser window    
+    window.oversize = function() {
+        adjustStyle();
+    };
+
+    function adjustStyle() {
+        var width = 0;
+        // Get the width...more cross-browser issues
+        if (window.innerHeight) {
+            width = window.innerWidth;
+        } else if (document.documentElement && document.documentElement.clientHeight) {
+            width = document.documentElement.clientWidth;
+        } else if (document.body) {
+            width = document.body.clientWidth;
+        }
+        if (width < 600) {
+            document.getElementById("styleCSS").setAttribute("href", "_css/narrow.css");
+        } else {
+            document.getElementById("styleCSS").setAttribute("href", "_css/style.css");
+        }
+    }
 }
 
 window.onload = function() {

@@ -1,0 +1,102 @@
+body {
+    
+    font-family: "Trebuchet MS", sans-serif;
+    background-color: #FFCC99;
+    color:#333;
+}
+
+
+
+header .topbar {
+    position: relative;
+    height: auto;
+}
+
+header .topbar-inner {
+    min-width: 450px;
+    height: 28px;
+    background-color: #D18763;
+
+}
+
+header .topbar-inner .container {
+    padding: 0.6em 0;
+    padding-top: 0.6em;
+    padding-right: 0px;
+    padding-bottom: 0.6em; 
+    padding-left: 0px; 
+
+}
+
+header .topbar div > ul, .nav {
+    display: block;
+    float: left;
+    margin: 0 10px 0 0;
+    position: relative;
+    left: 0;
+}
+
+header .topbar-inner li a {
+    border-radius: 8px;
+    font-size: 12px;
+    padding: 11px 11px 10px;
+
+}
+
+header .topbar div > ul a, .nav a {
+    display: block;
+    float: none;
+    line-height: 16px
+    text-decoration: none;
+}
+
+header .topbar div > ul > li, .nav > li {
+    display: block;
+    float: left;
+}
+
+
+h1 {
+    color: #009999;
+}
+
+fieldset {
+    width: 40%;
+    float:right;
+}
+
+#j-form {
+
+    margin:0 auto;
+    width:400px;
+
+}
+
+#errorMsg {
+
+    color:red;
+
+}
+
+.imagebox {
+
+    position:relative;
+    height:90px;
+    width:90px;
+    float:right;
+
+}
+
+#container {
+    width: 400px;
+    margin: auto;
+}
+
+
+
+}
+
+h3 {
+    color: #955B78;
+}
+
