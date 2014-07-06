@@ -1,0 +1,1 @@
+This is the content of a simple text file that got called from the server :) 
