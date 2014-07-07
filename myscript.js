@@ -77,6 +77,8 @@ function prepareEventHandlers() {
 window.onload = function() {
 
     prepareEventHandlers();
+    //Using jQuery for the Updates page
+    $("#accordian").accordian();
 
 }
 

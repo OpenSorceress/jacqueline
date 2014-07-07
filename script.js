@@ -134,4 +134,5 @@ window.onload = function() {
 	// Add to the DOM, to the div called "inputArea"
 	document.getElementById("inputArea").appendChild(inputMinutes);
 	document.getElementById("inputArea").appendChild(startButton);
+	
 };
